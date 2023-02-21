@@ -18,7 +18,7 @@ app.use(
 mongoose.set('strictQuery', true);
 const main = async () => {
     //MONGODB LOCAL
-    await mongoose.connect('mongodb://localhost:27017/ms-nodejs-sample',{
+    await mongoose.connect(`mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@localhost:27017/ms-backend-redis?authSource=admin`,{
         useNewUrlParser: true,
         useUnifiedTopology: true,
     })
